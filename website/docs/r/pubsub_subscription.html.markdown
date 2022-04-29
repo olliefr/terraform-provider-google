@@ -198,19 +198,19 @@ The following arguments are supported:
   (Optional)
   How long to retain unacknowledged messages in the subscription's
   backlog, from the moment a message is published. If
-  retain_acked_messages is true, then this also configures the retention
+  `retain_acked_messages` is true, then this also configures the retention
   of acknowledged messages, and thus configures how far back in time a
   subscriptions.seek can be done. Defaults to 7 days. Cannot be more
   than 7 days (`"604800s"`) or less than 10 minutes (`"600s"`).
-  A duration in seconds with up to nine fractional digits, terminated
-  by 's'. Example: `"600.5s"`.
+  The value is a duration in seconds with up to nine fractional digits,
+  terminated by 's'. Examples: `"600s"`.
 
 * `retain_acked_messages` -
   (Optional)
   Indicates whether to retain acknowledged messages. If `true`, then
   messages are not expunged from the subscription's backlog, even if
   they are acknowledged, until they fall out of the
-  messageRetentionDuration window.
+  `message_retention_duration` window.
 
 * `expiration_policy` -
   (Optional)

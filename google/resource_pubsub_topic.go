@@ -69,11 +69,12 @@ The expected format is 'projects/*/locations/*/keyRings/*/cryptoKeys/*'`,
 				Optional: true,
 				Description: `Indicates the minimum duration to retain a message after it is published
 to the topic. If this field is set, messages published to the topic in
-the last messageRetentionDuration are always available to subscribers.
+the last message_retention_duration are always available to subscribers.
 For instance, it allows any attached subscription to seek to a timestamp
-that is up to messageRetentionDuration in the past. If this field is not
+that is up to message_retention_duration in the past. If this field is not
 set, message retention is controlled by settings on individual subscriptions.
-Cannot be more than 7 days or less than 10 minutes.`,
+Cannot be more than 31 days ('"2678400s"') or less than 10 minutes ('"600s"'). The value is a duration 
+  in seconds with up to nine fractional digits, terminated by 's'. Example: '"600.5s"'.`,
 			},
 			"message_storage_policy": {
 				Type:     schema.TypeList,
